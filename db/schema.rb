@@ -10,33 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 5) do
+ActiveRecord::Schema.define(version: 4) do
 
-  create_table "airlines", force: :cascade do |t|
+  create_table "actors", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+  end
+
+  create_table "characters", force: :cascade do |t|
     t.string "name"
+    t.integer "actor_id"
+    t.integer "show_id"
+    t.string "catchphrase"
   end
 
-  create_table "flights", force: :cascade do |t|
-    t.integer "flight_number"
-    t.string "departure_time"
-    t.string "arrival_time"
-    t.string "departure_city"
-    t.string "destination_city"
+  create_table "networks", force: :cascade do |t|
+    t.string "call_letters"
+    t.integer "channel"
   end
 
-  create_table "luggages", force: :cascade do |t|
-    t.string "size"
-  end
-
-  create_table "passengers", force: :cascade do |t|
+  create_table "shows", force: :cascade do |t|
     t.string "name"
-    t.integer "age"
-    t.string "seat_preference"
-  end
-
-  create_table "seats", force: :cascade do |t|
-    t.string "seat_number"
-    t.string "location"
+    t.integer "network_id"
+    t.string "day"
+    t.string "genre"
+    t.string "season"
   end
 
 end

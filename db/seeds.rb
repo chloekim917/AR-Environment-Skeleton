@@ -1,65 +1,13 @@
-# Airline.delete_all
-# Flight.delete_all
-# Luggage.delete_all
-# Passenger.delete_all
-# Seat.delete_all
+Network.delete_all
+Show.delete_all
+Actor.delete_all
 
-airline1 = Airline.create(name: "Delta Airline")
-airline2 = Airline.create(name: "American Airline")
+network1 = Network.create(call_letters: "HBO", channel: 4)
 
-flight1 = Flight.create(airline: airline1, flight_number: "DL 275", departure_time: '2020-05-24 13:06', arrival_time: '2020-05-24_16:53', departure_city: "New York, NY", destination_city: "Orlando, FL")
-flight2 = Flight.create(airline: airline1, flight_number: "DL 137", departure_time: '2020-05-24 07:23', arrival_time: '2020-05-24_09:48', departure_city: "New York, NY", destination_city: "Washington DC")
-flight3 = Flight.create(airline: airline2, flight_number: "AA 242", departure_time: '2020-05-24 10:35', arrival_time: '2020-05-24_11:39', departure_city: "Boston, MA", destination_city: "Philadelphia, PA")
+show1 = Show.create(name: "GoT", network: network1, day: "Sunday", genre: "drama", season: "season 7")
+show2 = Show.create(name: "Office", network: network1, day: "Friday", genre: "comedy", season: "season 4")
+show3 = Show.create(name: "Parks and Rec", network: network1, day: "Tuesday", genre: "comedy", season: "season 2")
 
-passenger1 = Passenger.create(flight: flight1, name: "Abed Nadir", age: 23, seat_preference: "Aisle")
-passenger2 = Passenger.create(flight: flight1, name: "Ryan Howard", age: 18, seat_preference: "Aisle")
-passenger3 = Passenger.create(flight: flight1, name: "Stanly Hudson", age: 54, seat_preference: "Window")
-passenger4 = Passenger.create(flight: flight1, name: "Jeff Winger", age: 37, seat_preference: "Aisle")
-passenger5 = Passenger.create(flight: flight2, name: "Jim Halpert", age: 36, seat_preference: "Aisle")
-passenger6 = Passenger.create(flight: flight2, name: "Cece Halpert", age: 3, seat_preference: "Middle")
-passenger7 = Passenger.create(flight: flight2, name: "Pam Beesley", age: 34, seat_preference: "Window")
-passenger8 = Passenger.create(flight: flight2, name: "Pierce Hawthorne", age: 56, seat_preference: "Aisle")
-passenger9 = Passenger.create(flight: flight2, name: "Leslie Knope", age: 34, seat_preference: "Aisle")
-passenger10 = Passenger.create(flight: flight3, name: "Ron Swanson", age: 53, seat_preference: "Window")
-passenger11 = Passenger.create(flight: flight3, name: "Barney Stinson", age: 18, seat_preference: "Aisle")
-passenger12 = Passenger.create(flight: flight3, name: "Lily Aldryn", age: 26, seat_preference: "Aisle")
-passenger13 = Passenger.create(flight: flight3, name: "Ted Mosby", age: 24, seat_preference: "Window")
-passenger14 = Passenger.create(flight: flight3, name: "Michael Scott", age: 44, seat_preference: "Aisle")
-passenger15 = Passenger.create(flight: flight3, name: "Dwight Schrute", age: 34, seat_preference: "Aisle")
+actor1 = Actor.create(first_name: "Emilia", last_name: "Clark")
 
-seat1 = Seat.create(flight: flight1, passenger: passenger1, seat_number: "1A", location: "Window")
-seat2 = Seat.create(flight: flight1, passenger: nil, seat_number: "1B", location: "Middle")
-seat3 = Seat.create(flight: flight1, passenger: passenger2, seat_number: "1C", location: "Aisle")
-seat4 = Seat.create(flight: flight1, passenger: passenger3, seat_number: "2A", location: "Window")
-seat5 = Seat.create(flight: flight1, passenger: nil, seat_number: "2B", location: "Middle")
-seat6 = Seat.create(flight: flight1, passenger: passenger4, seat_number: "2C", location: "Aisle")
-seat7 = Seat.create(flight: flight2, passenger: passenger7, seat_number: "1A", location: "Window")
-seat8 = Seat.create(flight: flight2, passenger: passenger6, seat_number: "1B", location: "Middle")
-seat9 = Seat.create(flight: flight2, passenger: passenger5, seat_number: "1C", location: "Aisle")
-seat10 = Seat.create(flight: flight2, passenger: passenger9, seat_number: "2A", location: "Window")
-seat11 = Seat.create(flight: flight2, passenger: nil, seat_number: "2B", location: "Middle")
-seat12 = Seat.create(flight: flight2, passenger: passenger8, seat_number: "2C", location: "Aisle")
-seat13 = Seat.create(flight: flight3, passenger: passenger10, seat_number: "1A", location: "Window")
-seat14 = Seat.create(flight: flight3, passenger: passenger12, seat_number: "1B", location: "Middle")
-seat15 = Seat.create(flight: flight3, passenger: passenger11, seat_number: "1C", location: "Aisle")
-seat16 = Seat.create(flight: flight3, passenger: passenger13, seat_number: "2A", location: "Window")
-seat17 = Seat.create(flight: flight3, passenger: passenger14, seat_number: "2B", location: "Middle")
-seat18 = Seat.create(flight: flight3, passenger: passenger15, seat_number: "2C", location: "Aisle")
-
-luggage1 = Luggage.create(passenger: passenger1, size: "Carry on")
-luggage2 = Luggage.create(passenger: passenger1, size: "Check in")
-luggage3 = Luggage.create(passenger: passenger2, size: "Check in")
-luggage4 = Luggage.create(passenger: passenger3, size: "Check in")
-luggage5 = Luggage.create(passenger: passenger4, size: "Carry on")
-luggage6 = Luggage.create(passenger: passenger4, size: "Carry on")
-luggage7 = Luggage.create(passenger: passenger5, size: "Carry on")
-luggage8 = Luggage.create(passenger: passenger6, size: "Check in")
-luggage9 = Luggage.create(passenger: passenger7, size: "Check in")
-luggage10 = Luggage.create(passenger: passenger8, size: "Carry on")
-luggage11 = Luggage.create(passenger: passenger9, size: "Carry on")
-luggage12 = Luggage.create(passenger: passenger10, size: "Carry on")
-luggage13 = Luggage.create(passenger: passenger10, size: "Check in")
-luggage14 = Luggage.create(passenger: passenger11, size: "Carry on")
-luggage15 = Luggage.create(passenger: passenger11, size: "Carry on")
-
-
+character1 = Character.create(name: "Daenerys Targaryen", actor: actor1, show: show1, catchphrase: "I will burn you")
